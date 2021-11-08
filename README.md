@@ -1,4 +1,4 @@
-# 🏰 RPG au gour par tour 🏆
+# 🏰 RPG au tour par tour 🏆
 
 ## 👻🧙‍♂️ Jeu en java - terminal 🧙‍♂️👻
 
