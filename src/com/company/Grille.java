@@ -129,10 +129,10 @@ public class Grille {
 						tmp = grille[i][j]; // on copie le perso 
 						grille[i][j] = ".."; // on vide la case
 						grille[i][j+1] = tmp; // on déplace le perso
-						System.out.println("haut = 'z' - bas = 's' - gauche = 'q' - droite = 'd'");
+						System.out.println("\n\nhaut = '2' - bas = '5' - gauche = '4' - droite = '3'");
 						return;
 					} else {
-						System.out.println("haut = 'z' - bas = 's' - gauche = 'q' - droite = 'd' - combatre 'c'");
+						System.out.println("haut = '2' - bas = '5' - gauche = '4' - droite = '3' - combatre '1'");
 					}
 				}
 			}
@@ -155,10 +155,10 @@ public class Grille {
 							tmp = grille[i][j]; // on copie le perso 
 							grille[i][j] = ".."; // on vide la case
 							grille[i+1][j] = tmp; // on déplace le perso
-							System.out.println("\n\nhaut = 'z' - bas = 's' - gauche = 'q' - droite = 'd'");
+							System.out.println("\n\nhaut = '2' - bas = '5' - gauche = '4' - droite = '3'");
 							return;
 						} else {
-							System.out.println("haut = 'z' - bas = 's' - gauche = 'q' - droite = 'd' - combatre 'c'");
+							System.out.println("haut = '2' - bas = '5' - gauche = '4' - droite = '3' - combatre '1'");
 						}
 					}
 				}
@@ -166,4 +166,3 @@ public class Grille {
 		}
 	
 }
-

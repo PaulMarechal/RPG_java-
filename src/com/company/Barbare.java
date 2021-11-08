@@ -7,7 +7,7 @@ public class Barbare extends Ennemi {
     Random random = new Random();
 
         public Barbare() {
-            super(200, 10, "Ennemi", Arme.Sword);
+            super(160, 10, "Barbare", Arme.Sword);
         }
 
     @Override

@@ -30,8 +30,9 @@ private Aventurier mAventurier = new Aventurier();
 
 public void run() {
     // si le choix est different de 1 on quitte
-    if (!debut())
-    {return;}
+    if (!debut()){
+    	return;
+    }
     for (int i = 0; i < mDonjon.getSalles().length; i++) {
       if  (! salle(mDonjon.getSalles()[i])) {
           System.out.println("T'es mort !");
@@ -72,6 +73,11 @@ public void run() {
 
         Scanner scan = new Scanner(System.in);
         int choixUtilisateur = scan.nextInt();
+        
+        if (choixUtilisateur != 1) {
+        	System.out.println("Dommage, une prochaine fois...");
+        	return false;
+        }
 		
         Grille g1 = new Grille(10, 10);
         //on place le joueur
@@ -123,6 +129,14 @@ public void run() {
     	// Méthode pour le jeu de role - précise la vie du joueur/ennemi + vie joueur/ennemi
     	Ennemi ennemi = salle.getEnnemi();
         System.out.println("Le combat contre un " + ennemi.getNom() + " va commencer ! En garde ! ");
+        System.out.println("");
+        System.out.println("        X ");
+        System.out.println(" |_O   / \\  O_\\");
+        System.out.println("   |`-/   \\-'\\");
+        System.out.println("   |\\       / |");
+        System.out.println("  /  |      |  \\");
+        System.out.println("");
+       
 
 	
         while(mAventurier.getVie() > 0 && ennemi.getVie() > 0) {
@@ -153,10 +167,18 @@ public void run() {
                 System.out.println("Cette arme n'est pas valide.. ");
                 continue;
             }
+            System.out.println("Felicitation tu viens de passer la salle : " + salle.getNom());
+
+            System.out.println("");
+            System.out.println("   //");
+            System.out.println("  /_O  X");
+            System.out.println("   /`-/ \\   O_\\");
+            System.out.println("  | \\    \\-'_\\");
+            System.out.println(" /  /       \\ |_");
+            System.out.println("");
+
         }
         if (mAventurier.getVie() > 0) {
-            System.out.println("Felicitation tu viens de passer la salle : " + salle.getNom());
-            // test 
             
             Grille g1 = new Grille(10, 10);
             
@@ -204,15 +226,14 @@ public void run() {
     			} else {
     				System.out.println("Ce choix n'est pas valide");
     			}
-            }
-            
-            
-            // fin test 
+            } 
+
             return true;
+        }else if ( salle.getNom() == "Salle du boss ! ") {
+        	return true;
         } else {
             return false;
         }
     }
 
 }
-
