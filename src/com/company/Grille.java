@@ -59,7 +59,7 @@ public class Grille {
 			grille[l][c] = t;
 			
 		} else {
-			System.out.println("Erreur, cet zone n'est pas vite ! ");
+			//System.out.println("Erreur, cet zone n'est pas vide ! ");
 		}
 	}
 	

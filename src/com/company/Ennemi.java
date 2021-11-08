@@ -6,4 +6,5 @@ public abstract class Ennemi extends Personnage {
 
         super(vie, force, nom, vulnerabilite);
     }
+
 }

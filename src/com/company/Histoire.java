@@ -9,11 +9,13 @@ public class Histoire {
     public int[] surrogates1 = {0xD83D, 0xDC7B};
     public int[] surrogates2 = {0xD83E, 0xDDD9};
     public int[] surrogates3 = {0xD83E, 0xDD77};
+    public int[] surrogates4 = {0x1FAA8};
     
     public String emojiMechant = new String(surrogates, 0, surrogates.length);
     public String emojiMechant1 = new String(surrogates1, 0, surrogates1.length);
     public String emojiMechant2 = new String(surrogates2, 0, surrogates2.length);
     public String emojiHeros = new String(surrogates3, 0, surrogates3.length);
+    public String emojiPierre = new String(surrogates4, 0, surrogates4.length);
 
     // Differentes salles du jeu / Array[]
     Scanner scanner = new Scanner(System.in);
@@ -70,13 +72,20 @@ public void run() {
 
         System.out.println(" 1 - Entrer dans le Donjon ");
         System.out.println(" 2 - Partir en courant ");
+        System.out.println(" 3 - Acheter une arme ");
 
         Scanner scan = new Scanner(System.in);
         int choixUtilisateur = scan.nextInt();
         
-        if (choixUtilisateur != 1) {
+        if (choixUtilisateur == 2) {
         	System.out.println("Dommage, une prochaine fois...");
         	return false;
+        } else if ( choixUtilisateur == 3 ) {
+        	System.out.println("1 - Une épée");
+        	System.out.println("2 - une grenade");
+        	
+            Scanner scan3 = new Scanner(System.in);
+            int choixBoutique = scan.nextInt();
         }
 		
         Grille g1 = new Grille(10, 10);
@@ -87,6 +96,7 @@ public void run() {
         g1.placer(8, 2, emojiMechant);
         g1.placer(7, 4, emojiMechant1);
         g1.placer(1, 1, emojiMechant2);
+        g1.placer(5, 6, emojiPierre);
         
         
         g1.afficher();
@@ -167,17 +177,16 @@ public void run() {
                 System.out.println("Cette arme n'est pas valide.. ");
                 continue;
             }
-            System.out.println("Felicitation tu viens de passer la salle : " + salle.getNom());
-
-            System.out.println("");
-            System.out.println("   //");
-            System.out.println("  /_O  X");
-            System.out.println("   /`-/ \\   O_\\");
-            System.out.println("  | \\    \\-'_\\");
-            System.out.println(" /  /       \\ |_");
-            System.out.println("");
-
         }
+        System.out.println("");
+        System.out.println("   /");
+        System.out.println("  /_O  X");
+        System.out.println("   /`-/ \\   O_\\");
+        System.out.println("  | \\    \\-'_\\");
+        System.out.println(" /  /       \\ |_");
+        System.out.println("");
+        System.out.println("Felicitation tu viens de passer la salle : " + salle.getNom());
+        
         if (mAventurier.getVie() > 0) {
             
             Grille g1 = new Grille(10, 10);
@@ -187,14 +196,18 @@ public void run() {
             
             // on place un monstre avec des coordonnées aléatoires 
             Random random = new Random();
-            int nb, nb1, nb2;
+            int nb, nb1, nb2, nb3;
             nb = random.nextInt(9) + 1;
             nb1 = random.nextInt(9) + 2;
-            nb2 = random.nextInt(10);
+            nb2 = random.nextInt(10) + 1;
+            nb3 = random.nextInt(6) + 2;
             
             g1.placer(nb, nb1, emojiMechant);
             g1.placer(nb1, nb, emojiMechant1);
             g1.placer(nb2, nb1, emojiMechant2);
+            g1.placer(nb2, nb1, emojiPierre);
+            g1.placer(nb3, nb1, emojiPierre);
+            g1.placer(nb2, nb3, emojiPierre);
             g1.afficher();
             
             System.out.println("haut = '2' - bas = '5' - gauche = '4' - droite = '3'");
